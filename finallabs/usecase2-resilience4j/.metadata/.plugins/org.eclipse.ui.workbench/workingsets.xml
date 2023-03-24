@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1679582865452_0" label="Java Main Sources" name="Java Main Sources"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1679582865517_1" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1679582957690_3" label="camel-example-spring-boot-resilience4j" name="camel-example-spring-boot-resilience4j">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/spring-boot-resilience4j" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/camel-example-spring-boot-resilience4j-client" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/camel-example-spring-boot-resilience4j-client2" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/camel-example-spring-boot-resilience4j-service1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/camel-example-spring-boot-resilience4j-service2" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1679582873397_2" label="Window Working Set" name="Aggregate for window 1679582873396"/>
+</workingSetManager>

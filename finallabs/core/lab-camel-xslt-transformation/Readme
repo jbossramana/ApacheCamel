@@ -1,0 +1,10 @@
+This XSLT template simply adds a root element to the input XML and copies the original content. When you run the Apache Camel 
+route with this XSLT template, it should transform file as below:
+
+input file:
+  <message>Hello, world!</message>
+  
+output file:
+<?xml version="1.0" encoding="UTF-8"?><root>Hello, world!</root>
+
+

@@ -1,0 +1,12 @@
+
+<articles> 
+  <article>
+  <topic>Spring</topic>
+  </article>
+  <article> 
+   <topic>Hibernate</topic>
+  </article>
+  <article>
+   <topic>Camel</topic>
+  </article>
+</articles>

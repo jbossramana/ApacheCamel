@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 15
+Specification-Title: Camel SB Examples :: Resilience4j :: Client 2
+Specification-Version: 3.9
+Specification-Vendor: The Apache Software Foundation
+Implementation-Title: Camel SB Examples :: Resilience4j :: Client 2
+Implementation-Version: 3.9.0-SNAPSHOT
+Implementation-Vendor: The Apache Software Foundation
+Created-By: Maven Integration for Eclipse
+

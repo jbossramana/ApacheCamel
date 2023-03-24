@@ -1,0 +1,47 @@
+
+SENDING TO MULTIPLE RECIPIENTS IN PARALLEL
+
+<route>
+    <from uri="direct:a"/>
+    <recipientList parallelProcessing="true">
+        <header>myHeader</header>
+    </recipientList>
+</route>
+
+
+STOP CONTINUING IN CASE ONE RECIPIENT FAILED
+The Recipient List now supports stopOnException that for example Splitter also supports. You can use it to stop sending to any further recipients in case any recipient failed.
+
+ex1: try with ignoreInvalidEndpoints="false"
+http://localhost:8080/?msg=direct:b;dorect:j   
+Exception is thrown, because dorect is not an endpoint
+
+ex2: try with ignoreInvalidEndpoints="true"
+It works
+
+IGNORE INVALID ENDPOINTS
+The Recipient List now supports ignoreInvalidEndpoints (like the Routing Slip). You can use it to skip endpoints which are invalid.
+
+<route>
+    <from uri="direct:a"/>
+    <recipientList ignoreInvalidEndpoints="true">
+        <header>myHeader</header>
+    </recipientList>
+</route>
+
+
+USING CUSTOM AGGREGATIONSTRATEGY
+You can now use your own AggregationStrategy with the Recipient List. However this is rarely needed. What it is good for is that in case you are using Request Reply messaging then the replies from the recipients can be aggregated. By default Camel uses UseLatestAggregationStrategy which just keeps that last received reply.
+
+<route>
+    <from uri="direct:a"/>
+    <recipientList strategyRef="myStrategy">
+        <header>myHeader</header>
+    </recipientList>
+    <to uri="direct:b"/>
+</route>
+
+<!-- bean with the custom aggregation strategy -->
+<bean id="myStrategy" class="com.mycompany.MyOwnAggregationStrategy"/>
+
+

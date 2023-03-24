@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Payments xmlns="https://www.camelexample.com/schema/articles">
+
+    <Currency>???</Currency>
+
+    <Payment>
+        <from>krish</from>
+        <to>ram</to>
+        <amount>810.0</amount>
+    </Payment>
+    <Payment>
+        <from>raman</from>
+        <to>venkat</to>
+        <amount>990.0</amount>
+    </Payment>
+    <Payment>
+        <from>sankat</from>
+        <to>murali</to>
+        <amount>1222.0</amount>
+    </Payment>
+
+</Payments>

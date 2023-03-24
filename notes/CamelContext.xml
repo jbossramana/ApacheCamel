@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://camel.apache.org/schema/spring https://camel.apache.org/schema/spring/camel-spring.xsd">
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring" trace="false">
+       <route id="input">
+     
+     <from uri="file:/input?noop=true"/>
+     <setHeader name="process">
+        <constant>false</constant>
+     </setHeader>
+     <to uri="seda:initial"/>  
+	  </route>
+
+      <route id="initial">
+       <from uri="seda:initial"/>
+       <choice>
+                <when>
+                      <simple>${header.process} == 'false'</simple>
+                      <to uri="seda:enrich"/>
+                </when>
+                <otherwise>
+                       <to uri="seda:output"/>
+				</otherwise>
+       </choice>
+      </route>
+
+<route id="enrich">
+
+<from uri="seda:enrich"/>
+<transform> <simple> ${body} processed </simple> </transform>
+<setHeader name="process">
+<constant>true</constant>
+</setHeader>
+<to uri="seda:initial"/>
+</route>
+
+<route id="output">
+<from uri="seda:output"/>
+<to uri="file:/output"/>
+</route>
+
+
+  </camelContext>
+
+</beans>

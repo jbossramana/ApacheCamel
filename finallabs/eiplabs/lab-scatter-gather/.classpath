@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/ApacheCamel/labs/eiplabs/lib/activemq-all-5.16.1.jar"/>
+	<classpathentry kind="lib" path="C:/ApacheCamel/labs/eiplabs/lib/apache-camel-2.24.1.zip"/>
+	<classpathentry kind="lib" path="C:/ApacheCamel/labs/eiplabs/lib/apache-commons-lang.jar"/>
+	<classpathentry kind="lib" path="C:/ApacheCamel/labs/eiplabs/lib/camel-core-2.24.1.jar"/>
+	<classpathentry kind="lib" path="C:/ApacheCamel/labs/eiplabs/lib/camel-dozer-2.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/ApacheCamel/labs/eiplabs/lib/camel-jms-2.24.1.jar"/>
+	<classpathentry kind="lib" path="C:/ApacheCamel/labs/eiplabs/lib/dozer-5.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/ApacheCamel/labs/eiplabs/lib/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,39 @@
+Bindy
+
+The goal of this component is to allow the parsing/binding of non-structured data (or to be more precise non-XML data)
+to/from Java Beans that have binding mappings defined with annotations. Using Bindy, you can bind data from sources such as :
+
+CSV records,
+
+Fixed-length records,
+
+FIX messages,
+
+or almost any other non-structured data
+
+
+######Input file format id|name|semester|java|c|dbms|mathematics|datastructure
+ 1|Student 1|1st|80|56|54|90|90
+ 2|Student 2|1st|50|65|75|90|60  
+ 
+######Output File format id|name|semester|grade|total score|result
+
+ 1|Student 1|1st|A|370|Pass
+ 2|Student 2|1st|A|340|Pass 
+ 
+ 
+ 
+ 
+ 
+MOVE AND DELETE OPERATIONS
+
+file://data?move=.done
+file://data?delete=true
+
+pre move and the regular move:
+file://data?preMove=inprogress&move=.done
+
+
+we want to move the file into a backup folder with today’s date as the pattern, we can do:
+
+move=backup/${date:now:yyyyMMdd}/${file:name}

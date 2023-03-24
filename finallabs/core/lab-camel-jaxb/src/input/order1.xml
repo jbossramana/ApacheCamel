@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<order>
+    <id>1</id>
+    <customer>John Doe</customer>
+    <item>iPhone</item>
+    <quantity>1</quantity>
+</order>

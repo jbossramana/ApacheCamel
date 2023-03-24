@@ -1,0 +1,50 @@
+Rest API  ->  User Registration Service 
+
+CRUD operation - Http Methods
+|_ Create 		POST
+|_ Read		GET
+|_ Update		PUT
+|_ Delete		DELETE
+
+
+Resource Name : user
+
+Endpoint url/uri:
+/user  -> GET, POST, DELETE
+/user/<user-id>  -> GET, PUT, DELETE
+
+
+Custom queries:
+retrieve all users, registered in the year 2020
+/user?year=2020     GET
+
+retrieve first 5 users, registered in the year 2020
+/user?year=2020&start=1&size=5
+* Pagination (Rest design Patterns)
+
+
+To Produce Restful services : CXF, Jersey, Spring MVC, Camel Route (Rest DSL)
+
+Http Headers:
+|_ Accept  -> application/json (or) application/xml (GET)
+|_ Content-Type   -> application/json (or) application/xml  (POST, PUT)
+
+* Content-Negotiation  (Rest design pattern)
+
+Spring Sterio-type Annotations:
+rr -> Presentation Tier
+@Service -> Business Tier
+@Repository -> Data Tier
+@Component -> Generic Component
+
+
+
+
+
+
+
+
+
+
+
+

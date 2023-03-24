@@ -1,0 +1,24 @@
+Marshal - Transforms the message body (such as Java object) into a binary or textual format, ready to be wired over the network.
+
+Unmarshal - Transforms data in some binary or textual format (such as received over the network) into a Java object; or some other representation according to
+the data format being used.
+
+Asynchronous communication:
+|_ Messaging System
+     |_ Apache ActiveMQ
+     |_ Apache Kafka
+     
+    
+ To Start Zookeeper:
+  zookeeper-server-start.bat  ..\..\config\zookeeper.properties
+  
+ To Start Kafka:
+  kafka-server-start.bat  ..\..\config\server.properties  
+  
+ To create a topic:
+  kafka-topics.bat  --bootstrap-server localhost:9092  --create --topic sampleInTopic --partitions 1 --replication-factor 1
+
+Default pors:
+
+Zookeeper : 2181
+Kafka : 9092

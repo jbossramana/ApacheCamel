@@ -1,0 +1,69 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Camel :: Example :: Zipkin :: Client
+
+
+From: 'an unknown organization'
+  - Apache Thrift (http://thrift.apache.org) org.apache.thrift:libthrift:pom:0.11.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Apache Software Foundation' (http://jakarta.apache.org/)
+  - HttpClient (http://jakarta.apache.org/httpcomponents/httpclient-3.x/) commons-httpclient:commons-httpclient:jar:3.1
+    License: Apache License  (http://www.apache.org/licenses/LICENSE-2.0)
+
+From: 'GlassFish Community' (https://javaee.github.io)
+  - Java Servlet API (https://javaee.github.io/servlet-spec/) javax.servlet:javax.servlet-api:jar:4.0.1
+    License: CDDL + GPLv2 with classpath exception  (https://oss.oracle.com/licenses/CDDL+GPL-1.1)
+
+From: 'OpenZipkin' (http://zipkin.io/)
+  - Brave (https://github.com/openzipkin/brave/brave) io.zipkin.brave:brave:jar:5.6.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Brave Context: SLF4J (https://github.com/openzipkin/brave/brave-context-parent/brave-context-slf4j) io.zipkin.brave:brave-context-slf4j:jar:5.6.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Zipkin Reporter: Core (https://github.com/openzipkin/zipkin-reporter-java/zipkin-reporter) io.zipkin.reporter2:zipkin-reporter:jar:2.7.13
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Zipkin Sender: libthrift (Scribe) (https://github.com/openzipkin/zipkin-reporter-java/zipkin-sender-libthrift) io.zipkin.reporter2:zipkin-sender-libthrift:jar:2.7.13
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Zipkin Sender: URLConnection (https://github.com/openzipkin/zipkin-reporter-java/zipkin-sender-urlconnection) io.zipkin.reporter2:zipkin-sender-urlconnection:jar:2.7.13
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Zipkin Core Library (https://github.com/openzipkin/zipkin/zipkin) io.zipkin.zipkin2:zipkin:jar:2.11.10
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Oracle Corporation' (http://www.oracle.com/)
+  - Old JAXB Core (http://jaxb.java.net/jaxb-bundles/jaxb-core) com.sun.xml.bind:jaxb-core:jar:2.3.0
+    License: CDDL+GPL License  (http://glassfish.java.net/public/CDDL+GPL_1_1.html)
+  - Old JAXB Runtime (http://jaxb.java.net/jaxb-bundles/jaxb-impl) com.sun.xml.bind:jaxb-impl:jar:2.3.0
+    License: CDDL+GPL License  (http://glassfish.java.net/public/CDDL+GPL_1_1.html)
+
+From: 'QOS.ch' (http://www.qos.ch)
+  - SLF4J API Module (http://www.slf4j.org) org.slf4j:slf4j-api:jar:1.7.25
+    License: MIT License  (http://www.opensource.org/licenses/mit-license.php)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Apache Commons Logging (http://commons.apache.org/proper/commons-logging/) commons-logging:commons-logging:jar:1.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache HttpClient (http://hc.apache.org/httpcomponents-client) org.apache.httpcomponents:httpclient:jar:4.5.6
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Apache HttpCore (http://hc.apache.org/httpcomponents-core-ga) org.apache.httpcomponents:httpcore:jar:4.4.10
+    License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The Apache Software Foundation' (https://www.apache.org/)
+  - Apache Commons Codec (http://commons.apache.org/proper/commons-codec/) commons-codec:commons-codec:jar:1.11
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: CDI (http://camel.apache.org/camel-parent/components/camel-cdi) org.apache.camel:camel-cdi:jar:2.24.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Core (http://camel.apache.org/camel-parent/camel-core) org.apache.camel:camel-core:jar:2.24.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: HTTP (deprecated) (http://camel.apache.org/camel-parent/components/camel-http) org.apache.camel:camel-http:jar:2.24.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: HTTP :: Common (http://camel.apache.org/camel-parent/components/camel-http-common) org.apache.camel:camel-http-common:jar:2.24.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Camel :: Zipkin (http://camel.apache.org/camel-parent/components/camel-zipkin) org.apache.camel:camel-zipkin:jar:2.24.1
+    License: Apache License, Version 2.0  (https://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

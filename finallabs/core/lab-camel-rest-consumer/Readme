@@ -1,0 +1,27 @@
+To consume the rest service
+
+1. GET -> http://localhost:8080/camel/rest
+
+2. POST -> http://localhost:8080/camel/rest
+
+{"name":"RAMANA"}
+
+
+
+COMPONENTS SUPPORTING REST DSL
+
+The following Camel components supports the Rest DSL:
+
+camel-rest required contains the base rest component needed by Rest DSL
+
+camel-netty-http
+
+camel-jetty
+
+camel-platform-http
+
+camel-servlet
+
+camel-undertow
+
+

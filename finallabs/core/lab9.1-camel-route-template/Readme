@@ -1,0 +1,10 @@
+  <routeTemplate id="myTemplate">
+    <templateParameter name="name"/>
+    <templateParameter name="greeting"/>
+    <templateParameter name="myPeriod" defaultValue="3s"/>
+    <route>
+      <from uri="timer:{{name}}?period={{myPeriod}}"/>
+      <setBody><simple>{{greeting}} ${body}</simple></setBody>
+      <log message="${body}"/>
+    </route>
+  </routeTemplate>

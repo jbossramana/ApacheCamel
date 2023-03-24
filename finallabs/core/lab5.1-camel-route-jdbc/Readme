@@ -1,0 +1,15 @@
+  ROUTE TEMPLATE
+A Route template is as its name implies a template for a route, which are used to create 
+routes from a set of input parameters. Another way of think is that route templates 
+are parameterized routes.
+
+  <routeTemplate id="myTemplate">
+    <templateParameter name="name"/>
+    <templateParameter name="greeting"/>
+    <templateParameter name="myPeriod" defaultValue="3s"/>
+    <route>
+      <from uri="timer:{{name}}?period={{myPeriod}}"/>
+      <setBody><simple>{{greeting}} ${body}</simple></setBody>
+      <log message="${body}"/>
+    </route>
+  </routeTemplate>

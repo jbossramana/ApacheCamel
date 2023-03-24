@@ -1,0 +1,12 @@
+MOVE AND DELETE OPERATIONS
+
+file://data?move=.done
+file://data?delete=true
+
+pre move and the regular move:
+file://data?preMove=inprogress&move=.done
+
+
+we want to move the file into a backup folder with today’s date as the pattern, we can do:
+
+move=backup/${date:now:yyyyMMdd}/${file:name}

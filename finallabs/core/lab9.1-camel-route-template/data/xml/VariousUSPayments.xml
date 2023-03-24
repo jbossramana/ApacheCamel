@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Payments xmlns="https://www.camelexample.com/schema/articles">
+
+    <Currency>USD</Currency>
+
+    <Payment>
+        <from>ram</from>
+        <to>rushi</to>
+        <amount>900.0</amount>
+    </Payment>
+    <Payment>
+        <from>jana</from>
+        <to>mana</to>
+        <amount>210.0</amount>
+    </Payment>
+    <Payment>
+        <from>great</from>
+        <to>good</to>
+        <amount>422.0</amount>
+    </Payment>
+
+</Payments>

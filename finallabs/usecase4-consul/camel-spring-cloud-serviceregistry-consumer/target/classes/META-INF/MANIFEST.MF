@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Built-By: VENKATARAMANA
+Build-Jdk: 15.0.1
+Specification-Title: Camel :: Example :: Spring Cloud :: Service Registr
+ y :: Consumer
+Specification-Version: 2.23
+Specification-Vendor: The Apache Software Foundation
+Implementation-Title: Camel :: Example :: Spring Cloud :: Service Regist
+ ry :: Consumer
+Implementation-Version: 2.23.1
+Implementation-Vendor-Id: org.apache.camel.example
+Implementation-Vendor: The Apache Software Foundation
+Implementation-URL: http://camel.apache.org/camel-parent/examples/camel-
+ example-spring-cloud-serviceregistry-consumer
+Created-By: Maven Integration for Eclipse
+Class-Path: 
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring-3.8.0.xsd">
+
+<bean name="studentProcesser" id="studentProcesser" class="org.apache.camel.example.csv.StudentProcessor" />
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring"
+        xmlns:c="https://www.camelexample.com/schema/articles">
+        <route>
+			<from uri="file:inbox/csv?noop=true&amp;delay=10" />
+			<log message="CAMEL BINDY CSV MARSHALLING UNMARSHALLING EXAMPLE" loggingLevel="WARN"/>
+			<split streaming="true">
+				<tokenize token="\n" group="2" />
+				<unmarshal>
+					<bindy type="Csv"  classType="org.apache.camel.example.csv.student.Student"  />
+				</unmarshal>
+				<log message="Student Details are ${body}" loggingLevel="WARN" />
+				<bean ref="studentProcesser" method="processMarks" />
+				 <marshal> 
+					<bindy type="Csv"  classType="org.apache.camel.example.csv.result.StudentResult"   />
+				</marshal>
+				<log message="Student Results are ${body}" loggingLevel="WARN" />
+				<to uri="file:outbox/csv/simple?fileName=studentResult.txt&amp;fileExist=Append"/> 
+			</split>
+			<log message="COMPLETED BINDY SIMPLE CSV EXAMPLE" loggingLevel="WARN" />
+		</route>
+    </camelContext>
+
+</beans>

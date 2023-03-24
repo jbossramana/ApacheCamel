@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd      http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd     ">
+    <camelContext id="camelContext-0df7ca7c-b5b5-4e37-871c-0f42b6708ad9" xmlns="http://camel.apache.org/schema/spring">
+        <routeBuilder ref="currencyWithTxChecker"/>
+        <route id="_route1">
+            <from id="_from1" uri="file:/camel-exercises/jdbc-jms-transactions/in"/>
+            <!--<to uri="log:com.fusesource.camel.exercises.in?showBody=true"/>-->
+            <convertBodyTo id="_convertBodyTo1" type="java.lang.String"/>
+            <to id="_to1" uri="activemq:queue:incomingTxPayments"/>
+        </route>
+        <route id="_route2">
+            <from id="_from2" uri="activemq:queue:outgoingTxPayments"/>
+            <!--<to uri="log:com.fusesource.camel.exercises.out?showBody=true"/>-->
+            <convertBodyTo id="_convertBodyTo2" type="java.lang.String"/>
+            <to id="_to2" uri="file:/camel-exercises/jdbc-jms-transactions/out?fileName=output.xml&amp;fileExist=Append"/>
+        </route>
+    </camelContext>
+    <bean
+        class="com.fusesource.training.transaction.postgresql.PaymentCurrencyTestWithTxRouter" id="currencyWithTxChecker">
+        <property name="incomingQueue" value="incomingTxPayments"/>
+        <property name="outgoingQueue" value="outgoingTxPayments"/>
+        <property name="dataSource" ref="postgres-ds"/>
+    </bean>
+    <bean
+        class="org.springframework.jms.connection.JmsTransactionManager" id="jmsTransactionManager">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+    </bean>
+    <bean class="org.apache.activemq.ActiveMQConnectionFactory" id="jmsConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616?jms.redeliveryPolicy.maximumRedeliveries=3&amp;jms.redeliveryPolicy.initialRedeliveryDelay=500"/>
+    </bean>
+    <bean class="org.apache.camel.component.jms.JmsComponent"
+        id="bean-2ee32a9c-d797-4062-b69c-7fbd551e74b5" name="activemq">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+        <property name="transactionManager" ref="jmsTransactionManager"/>
+        <property name="transacted" value="true"/>
+    </bean>
+    <bean class="org.postgresql.ds.PGPoolingDataSource" id="postgres-ds">
+        <property name="serverName" value="localhost"/>
+        <property name="databaseName" value="camel_demo"/>
+        <property name="portNumber" value="0"/>
+        <property name="user" value="postgres"/>
+        <property name="password" value="camel_user"/>
+        <property name="dataSourceName" value="postgres-ds"/>
+        <property name="initialConnections" value="1"/>
+        <property name="maxConnections" value="10"/>
+    </bean>
+    <bean
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+        id="bean-ce6ec271-f8c5-41f1-a957-050d183898df" name="jdbcTransactionManager">
+        <property name="dataSource" ref="postgres-ds"/>
+    </bean>
+    <bean
+        class="org.springframework.transaction.support.TransactionTemplate" id="POLICY_PROPAGATION_REQUIRED">
+        <property name="transactionManager" ref="jdbcTransactionManager"/>
+        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
+    </bean>
+    <bean
+        class="com.fusesource.training.transaction.postgresql.JdbcMessageIdRepository" id="processedMessagesRepository">
+        <property name="dataSource" ref="postgres-ds"/>
+    </bean>
+</beans>

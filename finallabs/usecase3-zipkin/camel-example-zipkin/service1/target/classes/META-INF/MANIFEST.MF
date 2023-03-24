@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Built-By: VENKATARAMANA
+Build-Jdk: 15.0.1
+Specification-Title: Camel :: Example :: Zipkin :: Service 1
+Specification-Version: 2.24
+Specification-Vendor: The Apache Software Foundation
+Implementation-Title: Camel :: Example :: Zipkin :: Service 1
+Implementation-Version: 2.24.1
+Implementation-Vendor-Id: org.apache.camel.example
+Implementation-Vendor: The Apache Software Foundation
+Implementation-URL: http://camel.apache.org/camel-parent/examples/camel-
+ example-zipkin/camel-example-zipkin-service1
+Created-By: Maven Integration for Eclipse
+

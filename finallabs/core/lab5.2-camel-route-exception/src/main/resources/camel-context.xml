@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="         http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans.xsd     http://camel.apache.org/schema/spring   http://camel.apache.org/schema/spring/camel-spring.xsd">
+  
+    <bean class="com.fusesource.camel.exercises.exception.MyBean" id="myBeanError"/>
+ 
+    <bean class="com.fusesource.camel.exercises.exception.MyBean" id="myBeanErrorException"/>
+   
+    <camelContext id="camelContext-7bd9f314-93e2-4f19-943e-ca6c38f730d2" xmlns="http://camel.apache.org/schema/spring">
+        <packageScan>
+            <package>com.fusesource.camel.exercises.exception</package>
+        </packageScan>
+    
+        <endpoint id="sourceDirectoryXml" uri="file:/camel-exercises/exception/in/xml"/>
+        <endpoint id="directErrorHandlerWithException" uri="direct://errorHandlerWithException"/>
+        <endpoint id="directErrorHandler" uri="direct://errorHandler"/>
+        <endpoint id="moneyUriXml" uri="file:/camel-exercises/exception/xml/out/?fileExist=Append"/>
+        <endpoint id="directDLQError" uri="activemq:directDLQError"/>
+    </camelContext>
+    
+
+    
+</beans>

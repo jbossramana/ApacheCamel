@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+         
+<bean id="appenderAggregator" class="org.apache.camel.example.BodyAppenderAggregator"/>
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring"
+        xmlns:p="http://www.fusesource.com/training/payment">
+        <route>
+            <from uri="file:data/in?noop=true" />
+            <log message="Split by article Element"/>
+            <split parallelProcessing="false" parallelAggregate="false">
+                <xpath>/p:Payments/p:Payment</xpath>
+              
+                <log message="${body}"/>
+                <convertBodyTo type="java.lang.String"/>
+                <aggregate  strategyRef="appenderAggregator" completionTimeout="1" completionSize="0" >
+                <correlationExpression><xpath>/p:Payment/p:to</xpath></correlationExpression>
+                   <to uri="file:data/out?fileName=output-${id}.xml"/>           
+                </aggregate>
+                 
+                  </split>
+            
+          
+        </route>
+    </camelContext>
+
+</beans>

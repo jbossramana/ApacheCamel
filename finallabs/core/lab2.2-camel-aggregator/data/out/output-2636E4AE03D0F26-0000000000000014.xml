@@ -1,0 +1,9 @@
+<tns:Payment xmlns:tns="http://www.fusesource.com/training/payment">
+        <tns:from>paul$</tns:from>
+        <tns:to>ade</tns:to>
+        <tns:amount>1000000.0</tns:amount>
+    </tns:Payment><tns:Payment xmlns:tns="http://www.fusesource.com/training/payment">
+        <tns:from>jill$</tns:from>
+        <tns:to>ade</tns:to>
+        <tns:amount>10.0</tns:amount>
+    </tns:Payment>

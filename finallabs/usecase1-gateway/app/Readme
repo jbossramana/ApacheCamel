@@ -1,0 +1,47 @@
+Test the service
+
+**Get Catalog**
+```
+http GET :8080/api/items
+```
+
+Note that this is the same call that we have done to the inventory service (port 8081), but it's done on the gateway here.
+
+**Get all Purchases**
+```
+http GET :8080/api/purchases
+```
+
+**Get all Payments**
+```
+http GET :8080/api/payments
+```
+
+**Make a Order**
+```
+echo '{"reference": "order-1", "user": "cippalippa", "items": [{"id": "i1", "amount": 3}], "price": 3}' | http POST :8080/api/orders
+```
+
+If using CURL:
+```
+curl -X POST -d '{"reference": "order-2", "user": "cippalippa", "items": [{"id": "i1", "amount": 3}], "price": 3}' -H "Content-Type: application/json" -w "\n" http://localhost:8080/api/orders
+```
+
+After doing the order, check the catalog, purchases and payments again. 
+
+
+Camel usecase UI
+----------------
+
+http://localhost:4000
+
+
+Saga demo
+---------
+
+
+Now, considering that the business logic invariants are:
+- **You cannot spend more than $30**
+- **You cannot buy a item if it's not present in stock**
+
+Code refer to: credit -> CreditStoreImpl 

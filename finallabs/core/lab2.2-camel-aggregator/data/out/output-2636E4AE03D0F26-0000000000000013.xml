@@ -1,0 +1,13 @@
+<tns:Payment xmlns:tns="http://www.fusesource.com/training/payment">
+        <tns:from>jackEURO</tns:from>
+        <tns:to>jill</tns:to>
+        <tns:amount>20.0</tns:amount>
+    </tns:Payment><tns:Payment xmlns:tns="http://www.fusesource.com/training/payment">
+        <tns:from>adeEURO</tns:from>
+        <tns:to>jill</tns:to>
+        <tns:amount>42.0</tns:amount>
+    </tns:Payment><tns:Payment xmlns:tns="http://www.fusesource.com/training/payment">
+        <tns:from>pat$</tns:from>
+        <tns:to>jill</tns:to>
+        <tns:amount>13.0</tns:amount>
+    </tns:Payment>

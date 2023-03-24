@@ -1,0 +1,9 @@
+
+1. Start the consul server, by passing -config-dir (imports services from services.json)
+
+consul.exe agent -dev -config-dir config
+
+
+2. Consule web ui
+
+http://localhost:8500/ui/
