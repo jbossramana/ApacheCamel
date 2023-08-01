@@ -1,0 +1,43 @@
+  <route>
+        <from uri="file:input"/>
+         <setHeader name="process"><constant>false</constant></setHeader>
+        <to uri="seda:initialProcess"/>   </route>
+  <route>
+        
+        
+        <from uri="seda:initialProcess"/>
+        <choice>
+        <when>
+         <simple>${header.process} == false</simple>
+         <to uri="seda:enrichMessage"/>
+        </when>
+        <otherwise>
+            <to uri="seda:final"/>
+        </otherwise>      
+        </choice>   
+        </route>
+        
+        
+        <route>
+        <from uri="seda:enrichMessage"/>
+        <to uri="log:enrich"/>
+        <transform>
+        <simple>${body} processed</simple>
+        </transform>
+          <setHeader name="process"><constant>true</constant></setHeader>
+        <to uri="seda:initialProcess"></to>
+        
+        </route>
+        
+        
+             <route>
+        <from uri="seda:final"/>
+        <to uri="log:finalprocess"/>
+        <to uri="seda:producer"/>
+        </route>
+        
+             <route>
+        <from uri="seda:producer"/>
+        <to uri="file:output"/>
+        </route>
+        
