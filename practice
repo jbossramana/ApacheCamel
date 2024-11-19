@@ -4,6 +4,8 @@ bundle:install -s mvn:com.example.osgi/producer-v1/1.0.0
 
 bundle:install -s mvn:com.example.osgi/consumer/1.0.0
 
+bundle:install -s mvn:com.example.osgi/producer-v2/2.0.0
+
 
     <instructions>
     <!-- Import packages with specific versions -->
