@@ -1,5 +1,8 @@
 reg add HKCU\Console /v VirtualTerminalLevel /t REG_DWORD /d 1
 
+bundle:install -s mvn:com.example.osgi/producer-v1/1.0.0
+
+bundle:install  mvn:com.example.osgi/consumer/1.0.0
 
 
     <instructions>
