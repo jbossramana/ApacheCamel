@@ -7,26 +7,14 @@ bundle:install -s mvn:com.example.osgi/consumer/1.0.0
 bundle:install -s mvn:com.example.osgi/producer-v2/2.0.0
 
 
-    <instructions>
-    <!-- Import packages with specific versions -->
-<Import-Package>demo.service;version="[1.0.0,1.0.0]",org.osgi.framework;version="[1.8.0,2.0.0]",org.slf4j;version="[1.7.0,2.0.0]"</Import-Package>
+<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-spring-boot-xml-starter</artifactId>
+			<version>4.8.1</version>
+		</dependency>
 
-<Export-Package>demo.api;version="1.0.0"</Export-Package>
-
-    <!-- Private packages -->
-    <Private-Package>
-        demo.consumer
-    </Private-Package>
-
-    <!-- General bundle metadata -->
-    <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-    <Bundle-Version>${project.version}</Bundle-Version>
-    <Bundle-Activator>demo.consumer.ConsumerActivator</Bundle-Activator>
-    <Bundle-Name>${project.name}</Bundle-Name>
-    <Bundle-Description>${project.description}</Bundle-Description>
-    <Bundle-Vendor>${project.organization.name}</Bundle-Vendor>
-    
-  <!--  <Require-Bundle>
-      com.example.osgi.producer-v1;bundle-version="[1.0.0,1.0.0]"
-    </Require-Bundle>-->
-</instructions>
+	<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-stream-starter</artifactId>
+			<version>4.8.1</version>
+		</dependency>
